@@ -1,37 +1,25 @@
 
-//Variables are storage of values
+// Variables are storage of values
 let board;
 let score = 0;
-let rows =4;
+let rows = 4;
 let columns = 4;
-
 
 let is2048Exist = false;
 let is4096Exist = false;
 let is8192Exist = false;
 
 let startX = 0;
-let StartY = 0;
+let startY = 0;
 
-
-
-
-function setGame() {
+function setGame(){
 
 	board = [
-		[0,0,0,0],
-		[0,0,0,0],
-		[0,0,0,0],
-		[0,0,0,0]		
-	];
-
-	// board = [
-    //     [32, 8, 4, 0],
-    //     [4, 128, 64, 256],
-    //     [8, 32, 16, 2],
-    //     [16, 2, 256, 1024]
-    // ];
-
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0],
+        [0, 0, 0, 0]
+    ];
 
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
@@ -42,11 +30,13 @@ function setGame() {
 
 			let num = board[r][c];
 
+			// UpdateTile function updates the appearance of the tile based on its number value
 			updateTile(tile, num);
-			
+
 			document.getElementById("board").append(tile);
 		}
 	}
+
 	setTwo();
 	setTwo();
 }
@@ -74,51 +64,56 @@ window.onload = function(){
 }
 
 
-function handleSlide(e) {
-	console.log(e.code);//displays pressed key
-
+function handleSlide(e){
+	// Displays what key in the keyboard has been pressed.
+	console.log(e.code);
+	
 	if(["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.code)){
+		// Prevents the default behavior of the browser, which in this case, after arrowleft, arrowright, or any arrow keys it should not scroll. 
 		e.preventDefault();
 
 		if(e.code == "ArrowLeft" && canMoveLeft() == true){
-					slideLeft();
-					setTwo();
-				}
-				else if(e.code == "ArrowRight" && canMoveRigth() == true){
-					slideRight();
-					setTwo();
-				}
-				else if(e.code == "ArrowUp" && canMoveUp() == true){
-					slideUp();
-					setTwo();
-				}
-				else if(e.code == "ArrowDown" && canMoveDown() == true){
-					slideDown();
-					setTwo();
-				}
-
+			slideLeft();
+			setTwo();
+		}
+		else if(e.code == "ArrowRight" && canMoveRight() == true){
+			slideRight();
+			setTwo();
+		}
+		else if(e.code == "ArrowUp" && canMoveUp() == true){
+			slideUp();
+			setTwo();
+		}
+		else if(e.code == "ArrowDown" && canMoveDown() == true){
+			slideDown();
+			setTwo();
+		}
 	}
 
 	checkWin();
-	if(haslost() == true){
+
+	if(hasLost() == true){
 		setTimeout(() => {
-			alert("GAME OVER BITCH!!!");
+			alert("Game Over! You have lost the game. Game will restart");
 			restartGame();
 			alert("Click any arrow key to restart")
 		}, 100);
 	}
 
 	document.getElementById("score").innerText = score;
+
+
 }
 
 document.addEventListener("keydown", handleSlide);
 
-function filterZero(row) {
-	return row.filter(num => num !=0);
+// removes the zeroes in the board, to make the merging possible
+function filterZero(row){
+	return row.filter(num => num != 0);
 }
 
+// merges the tile
 function slide(row){
-
 	row =  filterZero(row);
 
 	for(let i=0; i < row.length - 1; i++ ){
@@ -130,15 +125,13 @@ function slide(row){
 	}
 
 	row = filterZero(row);
-
 	while(row.length < columns){
 		row.push(0);
 	}
 	return row;
 }
 
-
-
+// uses slide() function to merge the tile
 function slideLeft(){
 	for(let r=0; r<rows; r++){
 
@@ -148,7 +141,7 @@ function slideLeft(){
 		row = slide(row);
 		board[r] = row;
 
-
+		
 
 		for(let c=0; c<columns; c++){
 			let tile = document.getElementById(r.toString() + "-" + c.toString());
@@ -160,10 +153,12 @@ function slideLeft(){
 
 				setTimeout(()=>{
 					tile.style.animation = "";
-				},300);
+				}, 300);
 			}
 		}
+
 	}
+
 }
 
 
@@ -171,7 +166,6 @@ function slideRight(){
 	for(let r=0; r<rows; r++){
 		let row = board[r];
 		let originalRow = row.slice();
-
 		row.reverse();
 		row = slide(row);
 		row.reverse();
@@ -187,7 +181,7 @@ function slideRight(){
 
 				setTimeout(()=>{
 					tile.style.animation = "";
-				},300);
+				}, 300);
 			}
 		}
 	}
@@ -223,19 +217,19 @@ function slideUp(){
 			}
 		}
 
+
 	}
 }
-
 
 
 function slideDown(){
 	for(let c=0; c<columns; c++){
 		let col = [board[0][c], board[1][c], board[2][c], board[3][c]];
 
-		let originalCol = col.slice();		
+		let originalCol = col.slice();
+
 		col.reverse();
 		col = slide(col);
-
 		col.reverse();
 
 		changedIndices = [];
@@ -245,7 +239,7 @@ function slideDown(){
 				changedIndices.push(r)
 			}
 		}
-
+		
 		// this loop is to update the appearance of the tiles after merging
 		for(let r=0; r<rows; r++){
 			board[r][c] = col[r];
@@ -264,10 +258,11 @@ function slideDown(){
 }
 
 
-function hasEmptyTile() {
+// This is to check if the board has an empty tile / vacant space
+function hasEmptyTile(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
-			if(board[r][c]==0){
+			if(board[r][c] == 0){
 				return true;
 			}
 		}
@@ -276,20 +271,21 @@ function hasEmptyTile() {
 }
 
 
-function setTwo() {
+function setTwo(){
+	// if there is no empty tile / vacant space
 	if(!hasEmptyTile()){
 		return;
 	}
+
 	let found = false;
 
 	while(!found){
-
 		let r = Math.floor(Math.random() * rows);
 		let c = Math.floor(Math.random() * columns);
 
-		if(board[r][c]==0){
-			board[r][c] =2;
-			let tile = document.getElementById(r.toString()+ "-" + c.toString());
+		if(board[r][c] == 0){
+			board[r][c] = 2;
+			let tile = document.getElementById(r.toString() + "-" + c.toString());
 			tile.innerText = "2";
 			tile.classList.add("x2");
 			found = true;
@@ -301,30 +297,28 @@ function setTwo() {
 function checkWin(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
-			if(board[r][c]=== 2048 && is2048Exist == false){
-				alert("You win got 2048");
+			if(board[r][c] === 2048 && is2048Exist == false ){
+				alert("You Win! You got the 2048");
 				is2048Exist = true;
 			}
-
-			else if(board[r][c]=== 4096 && is4096Exist == false){
-				alert("YOU'RE A GRINDER, AMAZING!!!");
+			else if(board[r][c] === 4096 && is4096Exist == false ){
+				alert("You are unstoppable at 4096!");
 				is4096Exist = true;
 			}
-
-			else if(board[r][c]=== 8192 && is8192Exist == false){
-				alert("YOU'RE BORED AREN'T YOU!!!");
+			else if(board[r][c] === 8192 && is8192Exist == false ){
+				alert("Victory! You have reached 8192! You are incredibly awesome!");
 				is8192Exist = true;
 			}
-
 		}
 	}
 }
 
+function hasLost(){
 
-function haslost(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
-			if(board[r][c]== 0){
+
+			if(board[r][c]==0){
 				return false;
 			}
 
@@ -339,11 +333,10 @@ function haslost(){
                 // Found adjacent cells with the same value, user has not lost
                 return false;
             }
-
 		}
 	}
 
-	return true;	
+	return true;
 }
 
 
@@ -358,7 +351,7 @@ function restartGame(){
 }
 
 
-//this will document the x and y y coordinates where the user start to touch the screen
+// This will document the x and y coordinates where the user start to touch the screen 
 document.addEventListener('touchstart', (e) => {
 	startX = e.touches[0].clientX;
 	startY = e.touches[0].clientY;
@@ -366,42 +359,45 @@ document.addEventListener('touchstart', (e) => {
 
 
 document.addEventListener('touchend', (e) => {
+
+	// if the user does not touch a tile it should do nothing.
 	if(!e.target.className.includes("tile")){
 		return;
 	}
 
-	let diffX = startX - e.changedTouches[0].clientX;
+	let diffX = startX - e.changedTouches[0].clientX; 
 	let diffY = startY - e.changedTouches[0].clientY;
 
+	// horizontal swipe
 	if(Math.abs(diffX) > Math.abs(diffY)){
-
-		if(diffX > 0){
+		if(diffX > 0 ){
 			slideLeft();
-			setTwo();			
+			setTwo();
 		}
-		else {
+		else{
 			slideRight();
 			setTwo();
 		}
 	}
-	else {
+	// vertical swipe
+	else{
 		if(diffY > 0){
 			slideUp();
 			setTwo();
 		}
-		else {
+		else{
 			slideDown();
 			setTwo();
 		}
 	}
 
-	document.getElementById("score").innerText = score;
 
+	document.getElementById("score").innerText = score;
 	checkWin();
 
-	if(haslost() == true){
+	if(hasLost() == true){
 		setTimeout(() => {
-			alert("GAME OVER BITCH!!!");
+			alert("Game Over! You have lost the game. Game will restart");
 			restartGame();
 			alert("Click any arrow key to restart")
 		}, 100);
@@ -409,19 +405,22 @@ document.addEventListener('touchend', (e) => {
 
 })
 
+
 document.addEventListener("touchmove", (e) => {
+
 	if(!e.target.className.includes("tile")){
 		return;
 	}
 
-	e.preventDefault();//this prevent scrolling if tiles is touch.
-}, {passive: false}); // use to make preventdefault() work
+	e.preventDefault(); //This line prevents the default behavior during the user swipes the tile causing scroll (This line disables scrolling);
+
+}, {passive: false}); // Use passive: false to make preventDefault() work.
+
+
 
 function canMoveLeft(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
-			console.log(`${r}-${c}`)
-
 			if(board[r][c] !== 0){
 				if(board[r][c-1] === 0 || board[r][c-1] === board[r][c]){
 					return true;
@@ -432,11 +431,10 @@ function canMoveLeft(){
 	return false;
 }
 
-function canMoveRigth(){
+
+function canMoveRight(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
-			console.log(`${r}-${c}`)
-
 			if(board[r][c] !== 0){
 				if(board[r][c+1] === 0 || board[r][c+1] === board[r][c]){
 					return true;
@@ -447,11 +445,10 @@ function canMoveRigth(){
 	return false;
 }
 
+
 function canMoveUp(){
 	for(let c=0; c<columns; c++){
 		for(let r=0; r<rows; r++){
-			console.log(`${r}-${c}`)
-
 			if(board[r][c] !== 0){
 				if(board[r-1][c] === 0 || board[r-1][c] === board[r][c]){
 					return true;
@@ -462,11 +459,10 @@ function canMoveUp(){
 	return false;
 }
 
+
 function canMoveDown(){
 	for(let c=0; c<columns; c++){
 		for(let r=0; r<rows; r++){
-			console.log(`${r}-${c}`)
-
 			if(board[r][c] !== 0){
 				if(board[r+1][c] === 0 || board[r+1][c] === board[r][c]){
 					return true;
@@ -476,5 +472,39 @@ function canMoveDown(){
 	}
 	return false;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
