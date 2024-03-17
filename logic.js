@@ -446,17 +446,17 @@ function canMoveRight(){
 }
 
 
-function canMoveUp(){
-	for(let c=0; c<columns; c++){
-		for(let r=0; r<rows; r++){
-			if(board[r][c] !== 0){
-				if(board[r-1][c] === 0 || board[r-1][c] === board[r][c]){
-					return true;
-				}
-			}
-		}
-	}
-	return false;
+function canMoveUp() {
+    for (let c = 0; c < columns; c++) {
+        for (let r = 1; r < rows; r++) { // Start from index 1 instead of 0
+            if (board[r][c] !== 0) {
+                if (board[r - 1][c] === 0 || board[r - 1][c] === board[r][c]) {
+                    return true;
+                }
+            }
+        }
+    }
+    return false;
 }
 
 
