@@ -88,7 +88,6 @@ function handleSlide(e){
 			slideDown();
 			setTwo();
 		}
-	}
 
 	checkWin();
 
