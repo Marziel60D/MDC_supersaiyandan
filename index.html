@@ -1,79 +1,184 @@
-<!-- comment -->
-<!-- -->
-<!DOCTYPE html>
-<html>
-<head>
-	<!--  `<head>...</head>` contains details about the HTML file which is not visible in the browser.  -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<meta property="og:title" content="I coded a game with Zuitt!" />
-	<meta property="og:description" content="This Game Development project is powered by Zuitt Coding Bootcamp" />
-	<meta property="og:site_name" content="I coded a game with Zuitt!" />
-	<meta property="og:image" content="https://marziel60d.github.io/jsfcb_markdaniel/images/story-thumbnail-2048.jpg" />
-	<meta property="og:image:secure_url" content="https://marziel60d.github.io/jsfcb_markdaniel/" />
+    <meta property="og:title" content="Check this out!, I coded a mini web game!"/>
+    <meta property="og:description" content="This Game Development project is an application of my JavaScript training." />
+    <meta property="og:site_name" content="Check this out!, I coded a mini web game!" />
+    <meta property="og:image" content="https://marziel60d.github.io/jsfcb_markdaniel/images/story-thumbnail-2048.jpg" />
+    <meta property="og:image:secure_url" content="https://marziel60d.github.io/jsfcb_markdaniel/" />
 
 
+    <title>MDC 2048</title>
+    <link rel="icon" type="images/png" href="images/logo.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Signika+Negative&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="mdcStyles.css" >
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+
+  </head>
 
 
-<link rel="stylesheet" type="text/css" href="styles.css" >
-	<title>2048</title>
-
-</head>
-<body>
-	<div class="container">
-		<!-- `<body>...</body>` contains the actual content of the HTML file that are visible in the web browser -->
-		<h1>2048</h1>
-		<h2>Created by: Dan</h2>
-
-		<hr id="top-line">
-
-		<div class="header-container">		
-			<div class="score-container">
-				<div class="score-label">Score: </div>
-				<div id="score">0</div>
-			</div>
-
-			<!-- <h2>Score: <span id="score">0</span></h2> -->
-			<div class="share-button-container">
-				<div class="share-label">Share: </div>
-				<div class="share-icons">
-					<a href="https://www.facebook.com/sharer/sharer.php?u=https://marziel60d.github.io/jsfcb_markdaniel/">
-						<img src="./images/share_2048-fb.svg"/>
-					</a>
-				</div>
-			</div>
-		</div>
-
-
-		<!-- <div> tags are usually used as container to group contents -->
-		<div id="board">
-
-			<!-- 	<div class="tile x2">[r0, c0]</div>
-			<div class="tile x4">[r0, c1]</div>
-			<div class="tile x8">[r0, c2]</div>
-			<div class="tile x8192">[r0, c3]</div>
-
-			<div class="tile">[r1, c0]</div>
-			<div class="tile">[r1, c1]</div>
-			<div class="tile">[r1, c2]</div>
-			<div class="tile">[r1, c3]</div>
-
-			<div class="tile">[r2, c0]</div>
-			<div class="tile">[r2, c1]</div>
-			<div class="tile">[r2, c2]</div>
-			<div class="tile">[r2, c3]</div>
-
-			<div class="tile">[r3, c0]</div>
-			<div class="tile">[r3, c1]</div>
-			<div class="tile">[r3, c2]</div>
-			<div class="tile">[r3, c3]</div> -->
+  <body>
+    <!-- header safe -->
+    <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#"><img src="images/logo.png"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="https://marziel60d.github.io/projects/index.html">PROJECTS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#">Contact</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Know more
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Download CV</a></li>
+                      <li><a class="dropdown-item" href="#about_me">About</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <!-- <li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li> -->
+                </ul>
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-sblue" type="submit">Search</button>
+                </form>
+              </div>
+            </div>
+        </nav>
+    </header>
+    <!-- header safe -->
 
 
-		</div>
-	</div>
+    <!-- modal safe -->
+
+    <!-- modal safe -->
+    
 
 
-	<script src="logic.js"></script>
-</body>
+<!-- 2048 content -->
+  <div class="container">
+    <!-- `<body>...</body>` contains the actual content of the HTML file that are visible in the web browser -->
+
+    <h1>2048 SUPER SAIYAN DAN</h1>
+    <p class="bydan">Created by: Dan</p>
+    
+
+    <hr id="top-line">
+
+    <div class="header-container">    
+      <div class="score-container">
+        <div class="score-label">Score: </div>
+        <div id="score">0</div>
+      </div>
+
+      <!-- <h2>Score: <span id="score">0</span></h2> -->
+      <div class="share-button-container">
+        <div class="share-label">Share: </div>
+        <div class="share-icons">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://marziel60d.github.io/jsfcb_markdaniel/">
+            <img src="./images/share_2048-fb.svg"/>
+          </a>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div> tags are usually used as container to group contents -->
+    <div id="board">
+
+       <!-- <div class="tile x2">[r0, c0]</div>
+      <div class="tile x4">[r0, c1]</div>
+      <div class="tile x8">[r0, c2]</div>
+      <div class="tile x8192">[r0, c3]</div>
+
+      <div class="tile">[r1, c0]</div>
+      <div class="tile">[r1, c1]</div>
+      <div class="tile">[r1, c2]</div>
+      <div class="tile">[r1, c3]</div>
+
+      <div class="tile">[r2, c0]</div>
+      <div class="tile">[r2, c1]</div>
+      <div class="tile">[r2, c2]</div>
+      <div class="tile">[r2, c3]</div>
+
+      <div class="tile">[r3, c0]</div>
+      <div class="tile">[r3, c1]</div>
+      <div class="tile">[r3, c2]</div>
+      <div class="tile">[r3, c3]</div> -->
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+    
+
+
+<!-- 2048 content -->
+
+
+<!-- portfolio footer -->
+    <hr class="endline my-2">
+
+    <div class="container-fluid text-center container_end">
+      <div class="my-5">
+        <a href="#top">
+          <img src="images/logo_orgnl.png" width="80vh" height="80vh" />
+        </a>
+      </div>
+
+      <div class="footer_align my-5">
+        <div class="empty"></div>
+        <div class="empty"></div>
+        <div><a class="text-decoration-none d-e" href="https://www.instagram.com/marziel60d" target=”_blank”>Instagram</a></div>
+        <div><a class="text-decoration-none d-e" href="https://www.linkedin.com/in/md-camposano" target=”_blank”>LinkedIn</a></div>
+        <div><a class="text-decoration-none d-e" href="https://github.com/Marziel60D" target=”_blank”>GitHub</a></div>
+        <div><a class="text-decoration-none d-e" href="https://www.pinterest.ph/Marziel60D" target=”_blank”>Pinterest</a></div>
+        <div class="empty"></div>
+        <div class="empty"></div>
+      </div>
+
+      <div class="my-5">
+        <p style="font-size: .75em;">&copy 2024 Mark Daniel Camposano - md.camposano@outlook.com</p>
+      </div>
+
+    </div>
+    <!-- portfolio footer -->
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="logic.js"></script>
+  
+  </body>
 </html>
