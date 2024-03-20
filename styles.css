@@ -267,6 +267,7 @@ h1{
 @media (max-width:415px) {
 
 	*, ::after, ::before {
+		box-sizing: border-box;
 	}
 
 
@@ -282,6 +283,7 @@ h1{
 		box-sizing: border-box;
 		width: 25%;
 		height: 25%;
+		border: 3px solid #0b7b9e;
 	}
 
 	h1{

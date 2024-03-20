@@ -460,9 +460,10 @@ function canMoveUp() {
     return false;
 }
 
+
 function canMoveDown() {
     for (let c = 0; c < columns; c++) {
-        for (let r = 1; r < rows; r++) { // Start from index 1 instead of 0
+        for (let r = 0; r < rows - 1; r++) { // Adjusted the loop condition
             if (board[r][c] !== 0) {
                 if (board[r + 1][c] === 0 || board[r + 1][c] === board[r][c]) {
                     return true;
@@ -472,8 +473,6 @@ function canMoveDown() {
     }
     return false;
 }
-
-
 
 // function canMoveDown(){
 // 	for(let c=0; c<columns; c++){
