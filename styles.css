@@ -308,6 +308,10 @@ h1{
 		box-sizing: border-box;
 	}
 
+	.field-container {
+		background-image: url(./images/);
+	}
+
 	.header-container {
 		max-width: 80%;
 	}
