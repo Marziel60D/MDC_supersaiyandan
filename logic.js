@@ -104,7 +104,7 @@ function handleSlide(e) {
 		setTimeout(() => {
 			alert("GAME OVER BITCH!!!");
 			restartGame();
-			alert("Click any arrow key to restart")
+			alert("swipe or click any arrow key to restart")
 		}, 100);
 	}
 
@@ -302,17 +302,17 @@ function checkWin(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
 			if(board[r][c]=== 2048 && is2048Exist == false){
-				alert("You win got 2048");
+				alert("Congratulations you have reach Super Saiyan Blue Kaioken!");
 				is2048Exist = true;
 			}
 
 			else if(board[r][c]=== 4096 && is4096Exist == false){
-				alert("YOU'RE A GRINDER, AMAZING!!!");
+				alert("Awsome! you reach Ultra Instinct!!!");
 				is4096Exist = true;
 			}
 
 			else if(board[r][c]=== 8192 && is8192Exist == false){
-				alert("YOU'RE BORED AREN'T YOU!!!");
+				alert("YOU'RE BORED AREN'T YOU!!! you achieved True Ultra Instinct");
 				is8192Exist = true;
 			}
 
@@ -474,17 +474,24 @@ function canMoveDown() {
     return false;
 }
 
-// function canMoveDown(){
-// 	for(let c=0; c<columns; c++){
-// 		for(let r = 1; r<rows; r++){
-// 			if(board[r][c] !== 0){
-// 				if(board[r + 1][c] === 0 || board[r + 1][c] === board[r][c]){
-// 					return true;
-// 				}
-// 			}
-// 		}
-// 	}
-// 	return false;
-// }
+
+
+// chaotic carousel
+
+let items = document.querySelectorAll('.carousel .carousel-item')
+
+items.forEach((el) => {
+    const minPerSlide = 4
+    let next = el.nextElementSibling
+    for (var i=1; i<minPerSlide; i++) {
+        if (!next) {
+            // wrap carousel by using first child
+        	next = items[0]
+      	}
+        let cloneChild = next.cloneNode(true)
+        el.appendChild(cloneChild.children[0])
+        next = next.nextElementSibling
+    }
+})
 
 

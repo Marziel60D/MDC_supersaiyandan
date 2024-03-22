@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Alert</title>
+  <style>
+    #image-alert {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      /*background-color: white;
+      border: 1px solid #ccc;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+      z-index: 1000;
+    }
+
+    #image-alert img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+
+<div id="image-alert">
+  <img src="images/logo_orgnl.png" alt="Placeholder Image">
+</div>
+
+<script>
+  function showAlertWithImage(imageUrl) {
+    var imageAlert = document.getElementById('image-alert');
+    var imageElement = imageAlert.querySelector('img');
+    imageElement.src = imageUrl;
+    imageAlert.style.display = 'block';
+  }
+
+  // Call the function with the image URL you want to display
+  showAlertWithImage('images/logo_orgnl.png');
+
+  // You can also call the function with a different image URL whenever you want
+  // showAlertWithImage('https://example.com/your-image.jpg');
+</script>
+
+</body>
+</html>

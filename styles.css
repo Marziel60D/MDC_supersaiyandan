@@ -1,16 +1,40 @@
 body{
 	text-align: center;
-	color: #0047ab;
 }
 
-*, ::after, ::before {
-    box-sizing: unset;
-}
 
-.container {
-	box-sizing: border-box;
+
+.field-container {
+	/* box-sizing: border-box;
 	margin: 0 auto;
 	padding-top: 80px;
+
+
+    padding-bottom: 15vh;
+	background-image: url(./images/mdc-ss-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -4vh; */
+
+
+	box-sizing: border-box;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 25vh;
+    position: relative;
+    top: 10vh;
+    background-image: url(./images/mdc-ss-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: -4vh;
+
+	*, ::after, ::before {
+		box-sizing: unset;
+	}
+}
+
+.game-info {
+	padding-top: 45px;
 }
 
 .header-container {
@@ -262,6 +286,20 @@ h1{
     background-image: linear-gradient(to right, #00447c, #212121, #0b7b9e);
 }
 
+.field {
+	margin: 20px;
+}
+
+.card-mdc-overlay {
+	position: absolute;
+    top: 235px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: var(--bs-card-img-overlay-padding);
+    border-radius: var(--bs-card-inner-border-radius);
+}
+
 
 
 @media (max-width:415px) {
@@ -270,6 +308,9 @@ h1{
 		box-sizing: border-box;
 	}
 
+	.header-container {
+		max-width: 80%;
+	}
 
 	#board{
 		margin-top: 8px;
@@ -287,18 +328,60 @@ h1{
 	}
 
 	h1{
-		font-size: 40px;
+		font-size: 50px;
 		font-weight: 700;
 	}
 
 	.bydan {
-    font-size: 15px;
-    margin-left: 110px;
-    margin-top: -15px;
+		font-size: 15px;
+		margin-left: 160px;
+		margin-top: -15px;
 	}
 
 	#top-line {
     width: 325px;
 	}
 
+	.card-mdc-overlay {
+		top: 260px;
+	}
+
+}
+
+
+/* chaotic carousel */
+
+
+@media (max-width: 767px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+}
+
+/* medium and up screens */
+@media (min-width: 768px) {
+    
+    .carousel-inner .carousel-item-end.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(25%);
+    }
+    
+    .carousel-inner .carousel-item-start.active, 
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-25%);
+    }
+}
+
+.carousel-inner .carousel-item-end,
+.carousel-inner .carousel-item-start { 
+  transform: translateX(0);
 }
