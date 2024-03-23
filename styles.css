@@ -351,10 +351,11 @@ h1{
 	}
 
 	.bydan {
-		font-size: 15px;
-		margin-left: 180px;
-		color: #00447c;
-		-webkit-text-stroke: 0.2px #212121;
+		font-size: 20px;
+		margin-left: 0;
+		color: #eaeaea;
+		/* -webkit-text-stroke: 0.5px #212121; */
+		text-shadow: 3px 3px 0 #002756, -1px -1px 0 #212121, 1px -1px 0 #00447c, -1px 1px 0 #212121, 1px 1px 0 #0c0c0c;
 	}
 
 	#top-line {
