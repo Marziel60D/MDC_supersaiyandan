@@ -23,7 +23,7 @@ body{
     padding-bottom: 25vh;
     position: relative;
     top: 10vh;
-    background-image: url(./images/mdc-ss-bg.png);
+    background-image: url(./images/mdc-ss-bg-desktop.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position-y: -4vh;
@@ -266,11 +266,17 @@ body{
     margin: 0;
     padding: 0;
     margin-left: 381px;
-    margin-top: -15px;
-    color: #0b7b9e;
+	margin-top: -10px;
+    color: #eaeaea;
 }
 
 h1{
+    /* -webkit-text-stroke: 0px black;
+    text-shadow: 3px 3px 0 #0c0c0c, -1px -1px 0 #eaeaea, 1px -1px 0 #002756, -1px 1px 0 #212121, 1px 1px 0 #0c0c0c; */
+
+	-webkit-text-stroke: 0.5px black;
+    text-shadow: 3px 3px 0 #002756, -1px -1px 0 #eaeaea, 1px -1px 0 #00447c, -1px 1px 0 #212121, 1px 1px 0 #0c0c0c;
+
     font-size: 45px;
     font-weight: 700;
     margin: 0;
@@ -309,7 +315,15 @@ h1{
 	}
 
 	.field-container {
-		background-image: url(./images/);
+		padding-top: 26px;
+		padding-bottom: 8vh;
+		position: relative;
+		top: 8vh;
+		background-image: url(./images/mdc-ss-bg-mobile.png);
+	}
+
+	.game-info {
+		padding-top: 50px;
 	}
 
 	.header-container {
@@ -332,14 +346,15 @@ h1{
 	}
 
 	h1{
-		font-size: 50px;
-		font-weight: 700;
+		font-size: 45px;
+		font-weight: 400;
 	}
 
 	.bydan {
 		font-size: 15px;
-		margin-left: 160px;
-		margin-top: -15px;
+		margin-left: 180px;
+		color: #00447c;
+		-webkit-text-stroke: 0.2px #212121;
 	}
 
 	#top-line {
