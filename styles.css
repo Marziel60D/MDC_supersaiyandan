@@ -270,7 +270,7 @@ body{
     color: #eaeaea;
 }
 
-h1{
+.ssd-title{
     /* -webkit-text-stroke: 0px black;
     text-shadow: 3px 3px 0 #0c0c0c, -1px -1px 0 #eaeaea, 1px -1px 0 #002756, -1px 1px 0 #212121, 1px 1px 0 #0c0c0c; */
 
@@ -298,12 +298,25 @@ h1{
 
 .card-mdc-overlay {
 	position: absolute;
-    top: 235px;
+    top: 228px;
     right: 0;
     bottom: 0;
     left: 0;
     padding: var(--bs-card-img-overlay-padding);
     border-radius: var(--bs-card-inner-border-radius);
+}
+
+.modal-content {
+
+	background-image: url('./images/mdc-ss-bg-extra.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+}
+
+.modal-body {
+	color: white;
+    background-color: rgb(0 0 0 / 30%);
 }
 
 
@@ -320,6 +333,11 @@ h1{
 		position: relative;
 		top: 8vh;
 		background-image: url(./images/mdc-ss-bg-mobile.png);
+	}
+
+	.modal-content {
+
+		background-image: url('./images/mdc-ss-bg-mobile.png');
 	}
 
 	.game-info {
@@ -345,7 +363,7 @@ h1{
 		border: 3px solid #0b7b9e;
 	}
 
-	h1{
+	.ssd-title{
 		font-size: 45px;
 		font-weight: 400;
 	}
@@ -365,6 +383,8 @@ h1{
 	.card-mdc-overlay {
 		top: 260px;
 	}
+
+
 
 }
 

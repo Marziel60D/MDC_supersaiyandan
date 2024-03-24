@@ -78,7 +78,7 @@
   <div class="field-container">
     <!-- `<body>...</body>` contains the actual content of the HTML file that are visible in the web browser -->
 
-    <h1 class="font-lb l-c">2048 SUPER SAIYAN DAN</h1>
+    <h1 class="font-lb l-c ssd-title">2048 SUPER SAIYAN DAN</h1>
     <p class="bydan">Created by: Dan</p>
     
 
@@ -132,6 +132,122 @@
     
   </div>
 
+
+<!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="ssd-modal-1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel">How to Play 2048 Super Saiyan Dan: Step-by-Step Guide</h1>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p align="left">
+          <strong class="font-lb">Objective:</strong>
+          <br>
+          The goal of this game is to reach the coveted "Super Saiyan Blue Kaioken" tile equals to score of 
+          2048 by combining lower super saiyan state tiles on a grid, if you're strong enough you may continue 
+          playing after the goal to achieve the "True Ulra Instict" tile equals to score of 8192.
+          <br><br>
+          <strong class="font-lb">The Grid:</strong>
+          <br>
+          The game is played on a 4x4 grid.
+          Each grid cell can contain a Super Saiyan state tile, you may check the tiles below this guide.<br><br>
+          <strong class="font-lb">Starting Tiles:</strong>
+          <br>
+          At the beginning, two saiyan tiles with a value of "2" are placed randomly on the grid.<br><br>
+          <strong class="font-lb">Swipe to Move:</strong>
+          <br>
+          Use arrow key for desktop/laptop devices, or swipe gestures for mobile devices (up, down, left, right) 
+          to move all tiles simultaneously in the desired direction.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lb" data-bs-target="#ssd-modal-2" data-bs-toggle="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ssd-modal-2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">How to Play 2048 Super Saiyan Dan: Step-by-Step Guide</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p align="left">
+          <strong class="font-lb">Tile Movement:</strong>
+          <br>
+          When swiping, all tiles move as far as possible in the chosen direction, 
+          until they hit the edge of the grid or another tile.<br><br>
+          <strong class="font-lb">Combining Tiles:</strong>
+          <br>
+          When two tiles with the same saiyan state or value collide after a move, 
+          they merge into a single tile with the higher saiyan state and the sum of their values.
+          For example, two "saiyan" tiles with a value of "2" merge to form a single "false super saiyan" tile with a value of "4".<br><br>
+          <strong class="font-lb">Scoring:</strong>
+          <br>
+          Points are earned each time tiles are combined.
+          The value of the combined tile is added to the score.<br><br>
+          <strong class="font-lb">Winning:</strong>
+          <br>
+          You win the game when you create a tile with the value of "2048".   
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lb" data-bs-target="#ssd-modal-1" data-bs-toggle="modal">Back</button>
+        <button class="btn btn-lb" data-bs-target="#ssd-modal-3" data-bs-toggle="modal">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="ssd-modal-3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">How to Play 2048 Super Saiyan Dan: Step-by-Step Guide</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p align="left">
+          <strong class="font-lb">Losing:</strong>         
+          <br>
+          The game ends when the grid is full, and no more moves can be made.
+          Keep an eye on available moves to prevent the grid from filling up completely.<br><br>
+          <strong class="font-lb">Strategy Tips:</strong>
+          <br>
+          Focus on keeping the larger tiles in one corner to maximize space for further combinations.
+          Try to anticipate the consequences of each move to avoid trapping high-value tiles in inconvenient positions.<br><br>
+          <strong class="font-lb">Restart Option:</strong>
+          <br>
+          If you lose and you want to start over, just click any arrow key or swipe in any direction.<br><br>
+          <strong class="font-lb">Enjoy the Challenge:</strong>
+          <br>
+          2048 Super Saiyan Dan is a game of strategy and patience. 
+          Experiment with different tactics and enjoy the challenge of reaching the elusive "2048" tile!          
+        </p>
+
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-lb" data-bs-target="#ssd-modal-2" data-bs-toggle="modal">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
   <div class="game-info">
 
     <div class="container text-center my-144">
@@ -146,8 +262,15 @@
           </p>
           
           <p align="right">
-            <a class="btn btn-lb" href="#" role="button">Step by step &raquo;</a>
+            <!-- <a class="btn btn-lb" type="button" class="btn btn-success" 
+            data-bs-toggle="modal" data-bs-target="ssd-modal">Step by step &raquo;</a> -->
+
+            <button type="button" class="btn btn-lb" data-bs-toggle="modal" data-bs-target="#ssd-modal-1">
+              Step by step &raquo;
+            </button>
           </p>
+
+
     
         </div>
     
@@ -157,7 +280,7 @@
     <!-- chaostic carousel -->
 
     <div class="container text-center my-3">
-      <h2 class="font-lb l-a">Scores and its Super Saiyan States</h2>
+      <h2 class="font-lb l-a">Saiyan State tiles with their Score value</h2>
       <div class="row mx-auto my-auto justify-content-center">
           <div id="recipeCarousel" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-inner" role="listbox">
@@ -168,7 +291,7 @@
                                   <img src="./images/ssmdc-01.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">Saiyan</div>
-                              <div class="card-mdc-overlay d-e">score: 02</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 02 pts</div>
                           </div>
                       </div>
                   </div>
@@ -179,7 +302,7 @@
                                   <img src="./images/ssmdc-02.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">False Super Saiyan</div>
-                              <div class="card-mdc-overlay d-e">score: 04</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 04 pts</div>
                           </div>
                       </div>
                   </div>
@@ -190,7 +313,7 @@
                                   <img src="./images/ssmdc-03.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">Super Saiyan I</div>
-                              <div class="card-mdc-overlay d-e">score: 08</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 08 pts</div>
                           </div>
                       </div>
                   </div>
@@ -201,7 +324,7 @@
                                   <img src="./images/ssmdc-04.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">Super Saiyan II</div>
-                              <div class="card-mdc-overlay d-e">score: 16</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 16 pts</div>
                           </div>
                       </div>
                   </div>
@@ -212,7 +335,7 @@
                                   <img src="./images/ssmdc-05.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">Super Saiyan III</div>
-                              <div class="card-mdc-overlay d-e">score: 32</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 32 pts</div>
                           </div>
                       </div>
                   </div>
@@ -223,7 +346,7 @@
                                   <img src="./images/ssmdc-06.png" class="img-fluid">
                               </div>
                               <div class="card-img-overlay d-e">Super Saiyan IV</div>
-                              <div class="card-mdc-overlay d-e">score: 64</div>
+                              <div class="card-mdc-overlay d-e">Unlocks at 64 pts</div>
                           </div>
                       </div>
                   </div>
@@ -234,7 +357,7 @@
                                 <img src="./images/ssmdc-07.png" class="img-fluid">
                             </div>
                             <div class="card-img-overlay d-e">Super Saiyan God</div>
-                            <div class="card-mdc-overlay d-e">score: 128</div>
+                            <div class="card-mdc-overlay d-e">Unlocks at 128 pts</div>
                         </div>
                     </div>
                   </div>                
@@ -245,7 +368,7 @@
                                 <img src="./images/ssmdc-08.png" class="img-fluid">
                             </div>
                             <div class="card-img-overlay d-e">Super Saiyan Blue</div>
-                            <div class="card-mdc-overlay l-a">score: 256</div>
+                            <div class="card-mdc-overlay l-a">Unlocks at 256 pts</div>
                         </div>
                     </div>
                 </div>
@@ -256,7 +379,7 @@
                               <img src="./images/ssmdc-09.png" class="img-fluid">
                           </div>
                           <div class="card-img-overlay d-e">Super Saiyan Rose</div>
-                          <div class="card-mdc-overlay d-e">score: 512</div>
+                          <div class="card-mdc-overlay d-e">Unlocks at 512 pts</div>
                       </div>
                   </div>
                 </div>
@@ -267,7 +390,7 @@
                               <img src="./images/ssmdc-10.png" class="img-fluid">
                           </div>
                           <div class="card-img-overlay d-e">Super Saiyan White</div>
-                          <div class="card-mdc-overlay l-a">score: 1024</div>
+                          <div class="card-mdc-overlay l-a">Unlocks at 1024 pts</div>
                       </div>
                   </div>
                 </div>              
@@ -278,7 +401,7 @@
                               <img src="./images/ssmdc-11.png" class="img-fluid">
                           </div>
                           <div class="card-img-overlay d-e">Super Saiyan Blue Kaioken</div>
-                          <div class="card-mdc-overlay d-e">score: 2048</div>
+                          <div class="card-mdc-overlay d-e">Unlocks at 2048 pts</div>
                       </div>
                   </div>
                 </div>
@@ -289,7 +412,7 @@
                               <img src="./images/ssmdc-12.png" class="img-fluid">
                           </div>
                           <div class="card-img-overlay d-e">Ultra Instinct</div>
-                          <div class="card-mdc-overlay l-a">score: 4096</div>
+                          <div class="card-mdc-overlay l-a">Unlocks at 4096 pts</div>
                       </div>
                   </div>
                 </div>
@@ -300,7 +423,7 @@
                               <img src="./images/ssmdc-13.png" class="img-fluid">
                           </div>
                           <div class="card-img-overlay d-e">True Ultra Instinct</div>
-                          <div class="card-mdc-overlay l-a">score: 8192</div>
+                          <div class="card-mdc-overlay l-a">Unlocks at 8192 pts</div>
                       </div>
                   </div>
                 </div>
