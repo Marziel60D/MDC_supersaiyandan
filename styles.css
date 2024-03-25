@@ -332,12 +332,12 @@ body{
 		padding-bottom: 8vh;
 		position: relative;
 		top: 8vh;
-		background-image: url(./images/mdc-ss-bg-mobile.png);
+		background-image: url(./images/ssd-mdc-bg-gg.png);
 	}
 
 	.modal-content {
-
-		background-image: url('./images/mdc-ss-bg-mobile.png');
+		background-image: url('./images/ssd-mdc-bg-gg.png');
+		background-position-x: center;
 	}
 
 	.game-info {
