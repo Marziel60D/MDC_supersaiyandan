@@ -28,6 +28,18 @@ body {
 /* font site them */
 .font-lb {font-family: 'Libre Baskerville', serif;}
 
+.text-link {
+    color: #002756;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    color: #0b7b9e;
+    text-shadow: 1px 0px 0 #002756, -0.5px -0.5px 0 
+    #eaeaea, 0.5px -0.5px 0 #00447c, -0.5px 0.5px 0 
+    #212121, 0.5px 0.5px 0 #0c0c0c;
+  }
+
 .btn-outline-sblue {
     --bs-btn-color: #eaeaea;
     --bs-btn-border-color: #00447c;
@@ -368,13 +380,13 @@ h2.about_title {
 }
 
 .btn-lb {
-    --bs-btn-color: #eaeaea;
+    --bs-btn-color: #f2f3f4;
     --bs-btn-bg: #0b7b9e;
-    --bs-btn-border-color: #0b7b9e;
-    --bs-btn-hover-color: #eaeaea;
-    --bs-btn-hover-bg: #00447c;
+    --bs-btn-border-color: #035b7a;
+    --bs-btn-hover-color: #212121;
+    --bs-btn-hover-bg: #035b7a;
     --bs-btn-hover-border-color: #00447c;
-    --bs-btn-focus-shadow-rgb: 130,138,145;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
     --bs-btn-active-color: #eaeaea;
     --bs-btn-active-bg: #00447c;
     --bs-btn-active-border-color: #00447c;
@@ -384,7 +396,22 @@ h2.about_title {
     --bs-btn-disabled-border-color: #0b7b9e;
 }
 
-
+.btn-de {
+    --bs-btn-color: #0c0c0c;
+    --bs-btn-bg: #eaeaea;
+    --bs-btn-border-color: #c6c3b6;
+    --bs-btn-hover-color: #f2f3f4;
+    --bs-btn-hover-bg: #c6c3b6;
+    --bs-btn-hover-border-color: #212121;
+    --bs-btn-focus-shadow-rgb: 130, 138, 145;
+    --bs-btn-active-color: #eaeaea;
+    --bs-btn-active-bg: #00447c;
+    --bs-btn-active-border-color: #00447c;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #0b7b9e;
+    --bs-btn-disabled-bg: #0b7b9e;
+    --bs-btn-disabled-border-color: #0b7b9e;
+}
 
 
 
