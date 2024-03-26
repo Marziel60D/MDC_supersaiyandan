@@ -44,7 +44,10 @@ body{
     width: 400px;
     margin: 0 auto;
     padding-bottom: 5px;
-    color: #00447c;
+	color: #eaeaea;
+    text-shadow: 1px 0px 0 #002756, -0.5px -0.5px 0 
+		#eaeaea, 0.5px -0.5px 0 #00447c, -0.5px 0.5px 0 
+		#212121, 0.5px 0.5px 0 #0c0c0c;
 }
 
 .score-container, .share-button-container {
@@ -318,7 +321,6 @@ body{
 	color: white;
     background-color: rgb(0 0 0 / 30%);
 }
-
 
 
 @media (max-width:415px) {
