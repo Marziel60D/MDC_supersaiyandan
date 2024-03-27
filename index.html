@@ -4,19 +4,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- <meta property="og:title" content="Check this out!, I coded a mini web game!"/>
-    <meta property="og:description" content="This Game Development project is an application of my JavaScript training." />
-    <meta property="og:site_name" content="Check this out!, I coded a mini web game!" />
-    <meta property="og:image" content="https://marziel60d.github.io/MDC_supersaiyandan/images/story-thumbnail-ssd.png" />
-    <meta property="og:image:secure_url" content="https://marziel60d.github.io/MDC_supersaiyandan/" /> -->
-
-
-    <meta property='og:title' content='Check this out!, I coded a mini web game!'/>
+    <meta property="og:title" content='Check this out!, I coded a mini web game!'/>
     <meta property="og:site_name" content="MDC: Aspiring Web Developer Portfolio" />
-    <meta property='og:image' content='https://marziel60d.github.io/MDC_supersaiyandan/images/story-thumbnail-ssd.png'/>
-    <meta property='og:description' content='This Game Development project is an application of my JavaScript training.'/>
-    <meta property='og:url' content='https://marziel60d.github.io/MDC_supersaiyandan/'/>
-
+    <meta property="og:image" content=”https://marziel60d.github.io/MDC_supersaiyandan/images/story-thumbnail-ssd.png” />
+    <meta property="og:description" content='This Game Development project is an application of my JavaScript training.'/>
+    <meta property="og:url" content='https://marziel60d.github.io/MDC_supersaiyandan/'/>
 
     <title>MDC Super Saiyan Dan</title>
     <link rel="icon" type="images/png" href="images/logo.png" />
@@ -57,7 +49,7 @@
                       <li><a class="dropdown-item" href="#">Download CV</a></li>
                       <li><a class="dropdown-item" href="#about_me">About</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item " data-bs-toggle="modal" data-bs-target="#mdc-share">Share</a></li>
                     </ul>
                   </li>
                   <!-- <li class="nav-item">
@@ -73,38 +65,65 @@
         </nav>
     </header>
     <!-- header safe -->
-
-
     <!-- modal safe -->
 
+
+    <!-- Button trigger modal -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+    <div class="modal fade" id="mdc-share" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content text-center">
+          <p align="right">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </p>
+          <h5 class="modal-title" id="exampleModalLabel">SHARE</h5>
+          
+          <div class="modal-body">
+            ...
+          </div>
+          <p align="right">
+            <button type="button" class="btn btn-de" data-bs-dismiss="modal">Close</button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- modal safe -->
+
+
+
+
+    
     <!-- modal safe -->
     
 
 
 <!-- ssd content -->
   <div class="field-container">
-    <!-- `<body>...</body>` contains the actual content of the HTML file that are visible in the web browser -->
 
     <h1 class="font-lb l-c ssd-title">SUPER SAIYAN DAN</h1>
     <p class="bydan">Created by: Dan</p>
-    
 
     <hr id="top-line">
 
+    <!--share and score-->
+    <!--score section-->
     <div class="header-container">    
       <div class="score-container">
         <div class="score-label">Score: </div>
         <div id="score">0</div>
       </div>
-
-      <!-- <h2>Score: <span id="score">0</span></h2> -->
+      <!--share section-->
       <div class="share-button-container">
         <div class="share-label">Share: </div>
         <div class="share-icons">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://marziel60d.github.io/MDC_supersaiyandan/">
             <img src="./images/share_ssd-fb.svg"/>
           </a>
-
           <a href="https://linkedin.com/shareArticle?url=https://marziel60d.github.io/MDC_supersaiyandan/">
             <img src="./images/share_ssd-linkedin.svg"/>
           </a>          
@@ -113,9 +132,7 @@
     </div>
 
 
-    <!-- <div> tags are usually used as container to group contents -->
     <div id="board">
-
        <!-- <div class="tile x2">[r0, c0]</div>
       <div class="tile x4">[r0, c1]</div>
       <div class="tile x8">[r0, c2]</div>
@@ -135,19 +152,11 @@
       <div class="tile">[r3, c1]</div>
       <div class="tile">[r3, c2]</div>
       <div class="tile">[r3, c3]</div> -->
-
-
-    </div>
-    
+    </div>   
   </div>
 
 
-
-
-<!-- Modal -->
-
-
-
+<!-- Game Guide Modal -->
 
 <div class="modal fade" id="ssd-modal-1" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered">
@@ -245,7 +254,6 @@
           Super Saiyan Dan is a game of strategy and patience. 
           Experiment with different tactics and enjoy the challenge of reaching the elusive Super Saiyan Blue Kaioken tile!          
         </p>
-
       </div>
       <div class="modal-footer">
         <button class="btn btn-lb" data-bs-target="#ssd-modal-2" data-bs-toggle="modal">Back</button>
@@ -256,16 +264,10 @@
 </div>
 
 
-
-
-
-
-
   <div class="game-info">
 
     <div class="container text-center my-144">
       <div class="col align-self-center">
-
         <div class="field">
           <p align="left"><span style="color:rgb(0, 0, 0);font-weight:bold">HOW TO PLAY:</span>
             Use arrow keys for tile movement on computers, or swipe on mobile devices.
@@ -273,20 +275,13 @@
             Aim to reach a score of 16,384 to 32,768 points to unlock "Super Saiyan Blue Kaioken".
             After winning you can still keep going to achieve "True Ultra Instinct" tile that unlocks around 65,536 to 131,072 points.
           </p>
-          
+          <!-- game guid modal activation btn -->          
           <p align="right">
-            <!-- <a class="btn btn-lb" type="button" class="btn btn-success" 
-            data-bs-toggle="modal" data-bs-target="ssd-modal">Step by step &raquo;</a> -->
-
             <button type="button" class="btn btn-lb" data-bs-toggle="modal" data-bs-target="#ssd-modal-1">
               Step by step &raquo;
             </button>
-          </p>
-
-
-    
-        </div>
-    
+          </p>    
+        </div>    
       </div>
     </div>
 
