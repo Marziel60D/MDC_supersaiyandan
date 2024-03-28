@@ -312,7 +312,7 @@ body{
     border-radius: var(--bs-card-inner-border-radius);
 }
 
-.modal-content {
+.game-guide-bg {
 
 	background-image: url('./images/mdc-ss-bg-extra.png');
 	background-repeat: no-repeat;
@@ -322,10 +322,21 @@ body{
 
 }
 
-.modal-body {
+.game-guide-bg .modal-body {
 	color: white;
     background-color: rgb(0 0 0 / 30%);
 }
+
+
+
+
+
+
+
+
+
+
+
 
 @media (max-width:415px) {
 
@@ -341,7 +352,7 @@ body{
 		background-image: url(./images/ssd-mdc-bg-gg.png);
 	}
 
-	.modal-content {
+	.game-guide-bg {
 		background-image: url('./images/ssd-mdc-bg-gg.png');
 		background-position-x: center;
 	}

@@ -9,7 +9,6 @@ body {
 /*    justify-content: center;*/
 }
 
-
 /* common css */
 .bg-1-a {background-color: #212121;}
 /* text-colors */
@@ -412,6 +411,14 @@ h2.about_title {
     --bs-btn-disabled-bg: #0b7b9e;
     --bs-btn-disabled-border-color: #0b7b9e;
 }
+
+.mdc-share-bd {
+    background: #00000000;  
+    border: 0px;  
+}
+
+
+
 
 
 
