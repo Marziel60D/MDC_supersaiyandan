@@ -331,13 +331,6 @@ body{
 
 
 
-
-
-
-
-
-
-
 @media (max-width:415px) {
 
 	*, ::after, ::before {
@@ -442,3 +435,8 @@ body{
 .carousel-inner .carousel-item-start { 
   transform: translateX(0);
 }
+
+
+
+
+

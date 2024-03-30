@@ -1,4 +1,3 @@
-
 //Variables are storage of values
 let board;
 let score = 0;
@@ -25,6 +24,7 @@ function setGame() {
 		[0,0,0,0]		
 	];
 
+	//trial for gameover notif
 	// board = [
     //     [32, 8, 4, 0],
     //     [4, 128, 64, 256],
@@ -102,9 +102,9 @@ function handleSlide(e) {
 	checkWin();
 	if(haslost() == true){
 		setTimeout(() => {
-			alert("GAME OVER BITCH!!!");
+			alert("Good game, almost there. Every attempt counts!");
 			restartGame();
-			alert("swipe or click any arrow key to restart")
+			alert("Swipe or click any arrow key to restart.")
 		}, 100);
 	}
 
@@ -302,17 +302,17 @@ function checkWin(){
 	for(let r=0; r<rows; r++){
 		for(let c=0; c<columns; c++){
 			if(board[r][c]=== 2048 && is2048Exist == false){
-				alert("Congratulations you have reach Super Saiyan Blue Kaioken!");
+				alert("Congratulations, you have reached Super Saiyan Blue Kaioken! Keep pushing forward!");
 				is2048Exist = true;
 			}
 
 			else if(board[r][c]=== 4096 && is4096Exist == false){
-				alert("Awsome! you reach Ultra Instinct!!!");
+				alert("Amazing! You've reached Ultra Instinct, the pinnacle of power! Congratulations!");
 				is4096Exist = true;
 			}
 
 			else if(board[r][c]=== 8192 && is8192Exist == false){
-				alert("YOU'RE BORED AREN'T YOU!!! you achieved True Ultra Instinct");
+				alert("Unbelievable! You've unlocked True Ultra Instinct! The journey has been phenomenal. Thank you for playing and supporting my game. Your enthusiasm makes it all worthwhile!");
 				is8192Exist = true;
 			}
 
@@ -401,11 +401,12 @@ document.addEventListener('touchend', (e) => {
 
 	if(haslost() == true){
 		setTimeout(() => {
-			alert("GAME OVER BITCH!!!");
+			alert("Good game, almost there. Every attempt counts!");
 			restartGame();
-			alert("Click any arrow key to restart")
+			alert("Swipe or click any arrow key to restart")
 		}, 100);
 	}
+
 
 })
 
@@ -493,5 +494,11 @@ items.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+
+
+
+
+
+
 
 

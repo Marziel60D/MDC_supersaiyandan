@@ -417,7 +417,13 @@ h2.about_title {
     border: 0px;  
 }
 
+.mdc-share-icon {
+ width: 10vh;
+}
 
+a {
+    text-decoration: none;
+}
 
 
 
