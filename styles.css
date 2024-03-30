@@ -22,7 +22,7 @@ body{
     padding-top: 30px;
     padding-bottom: 25vh;
     position: relative;
-    top: 10vh;
+    top: 9vh;
     background-image: url(./images/mdc-ss-bg-desktop.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -34,7 +34,7 @@ body{
 }
 
 .game-info {
-	padding-top: 45px;
+	padding-top: 8vh;
 }
 
 .header-container {
